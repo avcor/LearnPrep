@@ -12,7 +12,7 @@ object DatabaseProvider {
                 content.applicationContext,
                 AppDatabase::class.java,
                 "app_database"
-            ).build()
+            ).fallbackToDestructiveMigration(true).build()
             INSTANCE = instance
             instance
         }
